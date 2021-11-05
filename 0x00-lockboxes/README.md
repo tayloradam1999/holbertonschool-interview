@@ -1,1 +1,1 @@
-# Exclusive HOLBERTON SCHOOL algorithm question
+# Exclusive HOLBERTON SCHOOL Algorithm Question
