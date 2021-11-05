@@ -13,7 +13,7 @@ def canUnlockAll(boxes):
     - boxes is a list of lists
     - A key with the same number as a box opens that box
     - You can assume all keys will be positive integers
-      - There can be keys that do not have boxes
+    - There can be keys that do not have boxes
     - The first box boxes[0] is unlocked
     - Return True if all boxes can be opened, else return False
     """
@@ -24,7 +24,7 @@ def canUnlockAll(boxes):
         if i in keys:
             # Appending all keys inside of boxes that can be opened
             [keys.append(key) for key in box if key not in keys]
-        # Condition met when current box cannot be opened with current keys   
+        # Condition met when current box cannot be opened with current keys
         else:
             # Perform same loop on remaining boxes
             for j in range(i, len(boxes)):
