@@ -14,19 +14,13 @@ def minOperations(n):
     """
     Finds min amount of operations using Prime Factorization
     """
-    # Find prime factors of n
-    prime_factors = []
-    while n % 2 == 0:
-        prime_factors.append(2)
-        n //= 2
-    for i in range(3, int(n**0.5) + 1, 2):
-        while n % i == 0:
-            prime_factors.append(i)
-            n //= i
-    if n > 2:
-        prime_factors.append(n)
-    # Count number of operations
-    operations = 0
-    for i in range(len(prime_factors)):
-        operations += prime_factors[i] - 1
-    return operations
+    op_count = 0 # Initialize operation count
+    factor = 2 # start at 2 because 1 is not prime
+
+    while n > 1: # while n is not 1
+        if n % factor == 0: # if n is divisible by factor
+            n = n // factor # divide n by factor
+            op_count += factor # add factor to op_count
+        else: # if n is not divisible by factor
+            factor += 1 # increment factor
+    return op_count # return op_count
