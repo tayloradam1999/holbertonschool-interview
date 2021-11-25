@@ -14,13 +14,13 @@ def minOperations(n):
     """
     Finds min amount of operations using Prime Factorization
     """
-    op_count = 0 # Initialize operation count
-    factor = 2 # start at 2 because 1 is not prime
+    op_count = 0  # Initialize operation count
+    factor = 2  # start at 2 because 1 is not prime
 
-    while n > 1: # while n is not 1
-        if n % factor == 0: # if n is divisible by factor
-            n = n // factor # divide n by factor
-            op_count += factor # add factor to op_count
-        else: # if n is not divisible by factor
-            factor += 1 # increment factor
-    return op_count # return op_count
+    while n > 1:  # while n is not 1
+        if n % factor == 0:  # if n is divisible by factor
+            n = n // factor  # divide n by factor
+            op_count += factor  # add factor to op_count
+        else:  # if n is not divisible by factor
+            factor += 1  # increment factor
+    return op_count  # return op_count
