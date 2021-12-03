@@ -1,6 +1,27 @@
 #include "sandpiles.h"
 
 /**
+ * print_grid - Print 3x3 grid
+ * @grid: 3x3 grid
+ *
+ */
+static void print_grid(int grid[3][3])
+{
+    int i, j;
+
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            if (j)
+                printf(" ");
+            printf("%d", grid[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+/**
  * sandpiles_sum - Computes the sum of two sandpiles
  * @grid1: First sandpile
  * @grid2: Second sandpile
@@ -9,7 +30,7 @@
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
 	/* You can assume both grid1 and grid2 are individually stable. */
-	/* grid1 must be printed before each round of toppling. */
+	/* When the function finishes, grid1 is stable. */
 	int i, j;
 
 	for (i = 0; i < 3; i++)
@@ -25,6 +46,8 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 			grid1[1][0] > 3 || grid1[1][1] > 3 || grid1[1][2] > 3 ||
 			grid1[2][0] > 3 || grid1[2][1] > 3 || grid1[2][2] > 3)
 		{
+			printf("=\n");
+			print_grid(grid1);
 			for (i = 0; i < 3; i++)
 			{
 				for (j = 0; j < 3; j++)
