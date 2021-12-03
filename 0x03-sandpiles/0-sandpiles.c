@@ -19,7 +19,6 @@ static void print_grid(int grid[3][3])
 		}
 		printf("\n");
 	}
-	printf("=\n");
 }
 
 /**
@@ -43,6 +42,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 	}
 	while (1)
 	{
+		printf("=\n");
 		print_grid(grid1);
 		if (grid1[0][0] > 3 || grid1[0][1] > 3 || grid1[0][2] > 3 ||
 			grid1[1][0] > 3 || grid1[1][1] > 3 || grid1[1][2] > 3 ||
