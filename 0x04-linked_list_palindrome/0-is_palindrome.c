@@ -32,10 +32,7 @@ int is_palindrome(listint_t **head)
 			rear = rear->next->next;
 		}
 		if (front->n != rear->n)
-		{
-			print_listint(*head);
 			return (0);
-		}
 		i++;
 		*head = (*head)->next;
 	}
