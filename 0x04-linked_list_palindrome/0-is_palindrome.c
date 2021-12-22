@@ -3,7 +3,7 @@
 /**
  * is_palindrome_helper - checks if a linked list is a palindrome recursively
  * @left: Starts at head and ends at the middle
- * @right:Starts at 2nd node in list and ends at last node
+ * @right: Starts at 2nd node in list and ends at last node
  * Return: 1 if palindrome, 0 if not
  */
 int is_palindrome_helper(listint_t **left, listint_t *right)
