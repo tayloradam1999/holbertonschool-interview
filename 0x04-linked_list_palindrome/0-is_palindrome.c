@@ -23,14 +23,13 @@ int is_palindrome(listint_t **head)
 	while (i != count / 2)
 	{
 		current = *head;
-		while (current->next)
-			current = current->next;
-		rear = current;
 		front = *head;
-		while (front != rear)
+		rear = *head;
+		while (current->next != NULL)
 		{
+			current = current->next;
 			front = front->next;
-			rear = rear->next;
+			rear = rear->next->next;
 		}
 		if (front->n != rear->n)
 		{
