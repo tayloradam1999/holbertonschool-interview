@@ -9,7 +9,7 @@
 int is_palindrome_helper(listint_t **left, listint_t *right)
 {
 	/* Empty list is a palindrome */
-	if (!right->next)
+	if (!right)
 		return (1);
 
 	/* Recursion */
