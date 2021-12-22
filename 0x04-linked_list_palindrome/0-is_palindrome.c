@@ -8,15 +8,19 @@
  */
 int is_palindrome_helper(listint_t **left, listint_t *right)
 {
+	/* Empty list is a palindrome */
 	if (!right->next)
 		return (1);
 
+	/* Recursion */
 	if (!is_palindrome_helper(left, right->next))
 		return (0);
 
+	/* Check if left and right nodes are equal */
 	if ((*left)->n != right->n)
 		return (0);
 
+	/* Move left to next node */
 	*left = (*left)->next;
 	return (1);
 }
