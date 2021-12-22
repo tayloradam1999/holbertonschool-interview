@@ -1,40 +1,36 @@
 #include "lists.h"
 
 /**
+ * is_palindrome_helper - checks if a linked list is a palindrome recursively
+ * @left: Starts at head and ends at the middle
+ * @right:Starts at 2nd node in list and ends at last node
+ * Return: 1 if palindrome, 0 if not
+ */
+int is_palindrome_helper(listint_t **left, listint_t *right)
+{
+	if (!right->next)
+		return (1);
+
+	if (!is_palindrome_helper(left, right->next))
+		return (0);
+
+	if ((*left)->n != right->n)
+		return (0);
+
+	*left = (*left)->next;
+	return (1);
+}
+
+/**
  * is_palindrome - checks if a linked list is a palindrome
  * @head: pointer to pointer of first node of listint_t list
  * Return: 1 if palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, count = 0;
-	listint_t *current, *front, *rear;
-
-	if (head == NULL || *head == NULL)
-	{
-		print_listint(*head);
+	if (!head || !*head)
 		return (1);
-	}
-	while (!*head)
-	{
-		count++;
-		*head = (*head)->next;
-	}
-	while (i != count / 2)
-	{
-		current = *head;
-		front = *head;
-		rear = *head;
-		while (current->next != NULL)
-		{
-			current = current->next;
-			front = front->next;
-			rear = rear->next->next;
-		}
-		if (front->n != rear->n)
-			return (0);
-		i++;
-		*head = (*head)->next;
-	}
-	return (1);
+
+	return (is_palindrome_helper(head, *head));
 }
+
