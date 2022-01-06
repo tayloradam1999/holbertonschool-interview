@@ -11,9 +11,12 @@ int is_palindrome(unsigned long n)
 
 	while (tmp)
 	{
+		/* Reverse the long */
 		rev = rev * 10 + tmp % 10;
+		/* Remove the last digit */
 		tmp /= 10;
 	}
+	/* Compare the reversed number with the original */
 	if (n == rev)
 		return (1);
 	return (0);
