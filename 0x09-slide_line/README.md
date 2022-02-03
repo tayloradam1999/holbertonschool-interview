@@ -55,4 +55,5 @@ Line: 0, 8, 8, 16
 - After numbers in array have been merged, one number will take double the value and the other will turn into zero.
 - If array is odd in size, the last number is non mergeable and will stay in the array.
 - If no slides or merges possible, return success.
+- slide_line will walk through all logic and pass variables to appropriate functions to determine if slides or merges are possible.
 
