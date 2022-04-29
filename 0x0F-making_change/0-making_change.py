@@ -18,7 +18,8 @@ def makeChange(coins, total):
     Return:
       if total is <= 0: return 0
       if total cannot be met: return -1
-      if total can be met: return the minimum number of coins needed to meet total
+      if total can be met: return the minimum number of coins needed
+        to meet total.
     """
     coins.sort(reverse=True)
     count = 0
