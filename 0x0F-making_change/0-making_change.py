@@ -12,7 +12,7 @@ def makeChange(coins, total):
     Args:
       coins: list of values of coins in your possession
         (the value of a coin will always be an int > 0)
-        you can assume you have an infinite supply of each coin)
+        (you can assume you have an infinite supply of each coin)
       total: amount of money you want to make change for
 
     Return:
