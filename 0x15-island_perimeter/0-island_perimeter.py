@@ -31,7 +31,7 @@ def island_perimeter(grid):
             # if we find a land cell, add 4 to the perimeter
             if grid[i][j] == 1:
                 perimeter += 4
-                # then, check if the cell is connected to the north, east, south, west
+                # then, check if the cell is connected to the NESW neighbors
                 # if it is, subtract 2 from the perimeter
                 if i > 0 and grid[i - 1][j] == 1:
                     perimeter -= 2
