@@ -10,12 +10,12 @@ def island_perimeter(grid):
 
   Args:
     grid (list of ints): grid of 0s and 1s
-        - 0: water
-        - 1: land
-        - Each cell is square, with a side length of 1
-        - Cells are connected horizontally/vertically (not diagonally)
-        - Grid is rectangular, with its width and height not exceeding 100
-        - The Grid is completely surrounded by water (0s)
+      - 0: water
+      - 1: land
+      - Each cell is square, with a side length of 1
+      - Cells are connected horizontally/vertically (not diagonally)
+      - Grid is rectangular, with its width and height not exceeding 100
+      - The Grid is completely surrounded by water (0s)
   
   Returns:
     int: perimeter of the island
@@ -38,4 +38,3 @@ def island_perimeter(grid):
         if j > 0 and grid[i][j - 1] == 1:
           perimeter -= 2
   return perimeter
-  
