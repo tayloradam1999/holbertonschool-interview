@@ -27,16 +27,37 @@ def isWinner(x, nums):
             Name of player that won most rounds.
             If winner is not determined, returns None.
     """
-    if x == 0:
-        return None
-    if len(nums) == 0:
-        return None
-    if len(nums) == 1:
-        return "Maria"
-
-    for i in range(x):
-        nums = [n for n in nums if n % nums[0] != 0]
-        if len(nums) == 1:
-            return "Maria"
+    count_m = 0
+    count_b = 0
+    for _ in range(x):
+        nums = [n for n in nums if n % 2 == 1]
         if len(nums) == 0:
-            return "Ben"
+            return None
+        if len(nums) % 2 == 0:
+            count_m += 1
+        else:
+            count_b += 1
+    if count_m > count_b:
+        return "Maria"
+    elif count_m < count_b:
+        return "Ben"
+    else:
+        return None
+    count_b = 0
+    for i in range(x):
+        nums = [i for i in nums if i % 2 != 0]
+        nums = [i for i in nums if i % 3 != 0]
+        nums = [i for i in nums if i % 5 != 0]
+        nums = [i for i in nums if i % 7 != 0]
+        if len(nums) == 0:
+            return None
+        if nums[0] % 2 == 0:
+            count_m += 1
+        else:
+            count_b += 1
+    if count_m > count_b:
+        return "Maria"
+    elif count_b > count_m:
+        return "Ben"
+    else:
+        return None
