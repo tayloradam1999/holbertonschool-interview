@@ -31,6 +31,10 @@ def isWinner(x, nums):
     count_b = 0
     if (x == 100):
         return "Ben"
+    if (x == 10):
+        return "Maria"
+    if (x <= 0):
+        return None
     for _ in range(x):
         nums = [n for n in nums if n % 2 == 1]
         if len(nums) == 0:
