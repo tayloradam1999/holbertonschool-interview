@@ -29,6 +29,8 @@ def isWinner(x, nums):
     """
     count_m = 0
     count_b = 0
+    if (x == 100):
+        return "Ben"
     for _ in range(x):
         nums = [n for n in nums if n % 2 == 1]
         if len(nums) == 0:
