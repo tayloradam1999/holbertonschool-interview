@@ -27,21 +27,36 @@ def isWinner(x, nums):
             Name of player that won most rounds.
             If winner is not determined, returns None.
     """
-    # Initialize variables
-    maria = 0
-    ben = 0
-    # Loop through rounds
-    for i in range(x):
-        # Remove multiples of each number
-        for j in nums:
-            nums = list(filter(lambda a: a % j != 0, nums))
-        # If Ben can't make a move, he loses
-        if nums == []:
-            return "Ben"
-        # If Maria can't make a move, she loses
+    if x == 0:
+        return None
+
+    if x == 1:
         if nums[0] == 1:
             return "Maria"
-        # Remove first number
-        nums = nums[1:]
-    # If no one can make a move, return None
-    return None
+        else:
+            return "Ben"
+
+    # Initialize the winner
+    winner = "Maria"
+
+    # Check if the winner is Ben
+    for i in range(len(nums)):
+        if nums[i] == 1:
+            winner = "Ben"
+            break
+
+    # If winner is not determined, continue checking
+    if winner == "Maria":
+        for i in range(len(nums)):
+            # Check if the winner is Maria
+            if nums[i] == 1:
+                winner = "Maria"
+                break
+
+            # Check if the winner is Ben
+            for j in range(len(nums)):
+                if nums[j] == 1:
+                    winner = "Ben"
+                    break
+
+    return winner
